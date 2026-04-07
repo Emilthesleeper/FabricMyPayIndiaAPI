@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "mypayindiaapi",
+  "version": "${version}",
+
+  "name": "MyPayIndia API",
+  "description": "The Minecraft API for the best payment system in the world.",
+  "authors": [],
+  "contact": {},
+
+  "license": "All-Rights-Reserved",
+  "icon": "assets/mypayindiaapi/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "client": ["com.emilsleeper.mypayindia_api.MypayindiaAPIClient"],
+    "main": ["com.emilsleeper.mypayindia_api.MypayindiaAPI"]
+  },
+
+  "mixins": [
+    "mypayindiaapi.mixins.json"
+    ,{
+      "config": "mypayindiaapi.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
